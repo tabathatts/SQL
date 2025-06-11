@@ -1,0 +1,76 @@
+#In this SQL, I'm querying a database with multiple tables in it to analyze pricing of Airbnb listings in Sydney, Australia
+
+
+
+
+#1. Fetch data from the entire neighbourhoods table
+SELECT * FROM neighbourhoods;
+
+#2. Fetch data from the entire reviews table
+SELECT * FROM reviews;
+
+#3. Fetch data from the entire calendar table
+SELECT *FROM calendar;
+
+#4. Fetch host_id and host from the listings table
+SELECT host_id, host FROM listings;
+
+#5. Fetch host_id and host from the listings table
+    Make sure the output is sorted by host_id in descending order
+SELECT host_id, host FROM listings 
+ORDER by host_id desc;
+
+#6. Fetch only host_id, host from the listings table
+    Make sure to filtered the data by just neighbourhood_id=35
+    Make sure the ouput is sorted by host_id in descending order
+SELECT host_id, host FROM listings
+WHERE neighbourhood_id=35
+ORDER by host_id desc;
+
+#7. Fetch only host_id, host from the listings table
+    Make sure to filtered the data by just neighbourhood_id=27 and room type='Private room'
+    Make sure the ouput is sorted by host_id in descending order
+SELECT host_id, host FROM listings
+WHERE neighbourhood_id=27 AND room_type='Private room'
+ORDER by host_id desc;
+
+#8. Fetch all columns from the calendar table
+    Make sure you filtered the data to dates between 2022-09-09 and 2022-09-11
+SELECT * FROM calendar WHERE date between '2022-09-09' AND '2022-09-11';
+
+#9. Fetch all columns from the calendar table
+    Make sure you filtered the data to dates between 2022-09-09 and 2022-09-11  
+    Make sure you filtered the data to listing_id=7581665
+SELECT * FROM calendar WHERE date between '2022-09-09' AND '2022-09-11' AND listing_id7581665;
+
+#10. Fetch all columns from the calendar table
+    Make sure you filtered the date to listing_id=657377039990074158
+SELECT * FROM calendar
+WHERE listing_id=657377039990074158;
+
+#11. Fetch all columns from the reviews table
+     Make sure you filtered the date to listing_id=657377039990074158
+SELECT * FROM listings 
+WHERE listings _id = 657377039990074158;
+
+#12. Fetch all colums from the listings table
+      Make sure you filter listings, having a price_in_dollar greater than or equal to 400 dollars
+      Make sure your order the list by price_in_dollar ascendingly
+SELECT * FROM listings 
+WHERE price_in_dollar >=400
+ORDER by price_in_dollar ASC;
+
+#13. Fetch all colums from the listings table
+      Make sure you filter listings, having a price_in_dollar greater than or equal to 400 dollars
+      Make sure your filter listings also on having neighbourhood_id 20 or 26
+      Make sure your order the list by price_in_dollar ascendingly
+SELECT * FROM listings 
+WHERE (price_in_dollar >= 400) and (neighbourhood_id=20 or neighbourhood_id =26)
+ORDER by price_in_dollar ASC;
+
+#14. Fetch all columns from the reviews table
+    Make sure your filter reveiws based on listing_id:21443493,10729688,9012529,46159786 and 9376988
+    Make sure your order the ist by listing_id ascendingly
+SELECT *FROM reviews
+WHERE listing_id IN (21443493,10729688,9012529,46159786,9376988_
+ORDER BY listing_id ASC
