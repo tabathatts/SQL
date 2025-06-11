@@ -1,8 +1,6 @@
 #In this SQL, I'm querying a database with multiple tables in it to analyze pricing of Airbnb listings in Sydney, Australia
 
 
-
-
 #1. Fetch data from the entire neighbourhoods table
 SELECT * FROM neighbourhoods;
 
